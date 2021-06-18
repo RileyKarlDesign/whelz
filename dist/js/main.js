@@ -95,8 +95,7 @@ const runningTotal =
     departure: "",
     desitnation: "",
     dates: "",
-    passengerCount: ""
-
+    passengerCount: ""  
 }
 
 
