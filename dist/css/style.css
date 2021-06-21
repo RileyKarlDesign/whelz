@@ -14,6 +14,15 @@
   background-color: grey;
 }
 
+.liveUpdate {
+  width: 100%;
+}
+
+.running {
+  display: flex;
+  justify-content: space-between;
+}
+
 .direction {
   background-color: red;
 }
