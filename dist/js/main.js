@@ -76,30 +76,39 @@ const vehicles = [
     {
         type: "Car",
         name: "ford Festa",
+        year: "2016",
+        odo: "60,000",
+        insurance: "$150",
         seats: "5",
         fuleUsage: "low",
         location: 'Auckland',
-        dayRate: '0',
+        dayRate: '60$',
         id: 1
 
     },
     {
         type: "Motor Bike",
         name: "Kawasaki Ninja",
+        year: "2015",
+        odo: "25,000",
+        insurance: "$150",
         seats: "2",
         fuleUsage: "low",
         location: 'Auckland',
-        dayRate: '0',
+        dayRate: '$50',
         id: 2
 
     },
     {
         type: "Van",
         name: "Nissan Cube",
+        year: "2018",
+        odo: "35,000",
+        insurance: "$150",
         seats: "5",
         fuleUsage: "Mid",
         location: 'Wellington',
-        dayRate: '0',
+        dayRate: '$70',
         id: 3
 
     },
@@ -244,7 +253,18 @@ function addArrivalClicks() {
 
 //4th page
 
+
+$("#date-input").flatpickr(
+
+    {
+        mode: "range",
+        minDate: "today",
+    dateFormat: "Y-m-d"
+    }
+);
+
 $('#date-input').blur(function () {
+
 
     const date = $('#date-input').val();
 
@@ -374,15 +394,16 @@ function displayFilterdVehicles() {
 
             $('.vehicle-icon').click(function () {
                 
-                $('.avalible-vehicles-icons').hide()
-                $('.orderPage').show()
+                
 
                 
                 const id = parseInt($(this).data('id'));
 
                 selectedVehicle =  vehicles.find(function (vehicle) {
                     if (vehicle.id === id) {
+                        
                         return true;
+                        
 
                     }
 
@@ -390,7 +411,11 @@ function displayFilterdVehicles() {
                 });
 
                 console.log(selectedVehicle)
-                displayOrderPage(selectedVehicle)
+                populateOrderPage(selectedVehicle)
+
+                $('.avalible-vehicles').hide()
+                
+                
             });
         }
 
@@ -401,19 +426,38 @@ function displayFilterdVehicles() {
 
 
 
-
-
-
-
-
-
-
-
-
-
 }
 
 
+//8th page
+
+function populateOrderPage(selectedVehicle){
+
+    $('.vehical-name').html(selectedVehicle.name)
+    $('.vehical-img').html(selectedVehicle.img)// do when you have images 
+    $('.this-car-year').html(selectedVehicle.year)
+
+    $('.this-car-odometer').html(selectedVehicle.odo)
+    $('.this-car-seats').html(selectedVehicle.seats)
+
+
+
+    $('.this-car-insurance').html(selectedVehicle.insurance)
+    $('.this-car-cost').html(`Est-xxx`)/// do when you have fule cost 
+    $('.this-car-day-rate').html(`total days x ${selectedVehicle.dayRate}`)
+    $('.this-car-total').html(`fill me in`)
+
+
+
+    $('.order-page').show()
+
+}
+
+$('.order-pg-btn').click(function(){
+    $('.order-page').hide()
+    $('.confirm-order-page').show()
+    
+})
 
 
 
@@ -441,7 +485,8 @@ function hidePages() {
     $('.passenger-count').hide()
     $('.review').hide()
     $('.avalible-vehicles').hide()
-    $('.Order-page').hide()
+    $('.order-page').hide()
+    $('.confirm-order-page').hide()
 
 }
 

@@ -5,11 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
     <title>Whelz</title>
     <link rel="stylesheet" href="css/style.css">
     <script  defer  src="js/main.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="https://npmcdn.com/flatpickr/dist/themes/airbnb.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
 </head>
 <body>
     <div class="container">
@@ -105,13 +112,57 @@
 
         </div>
 
-        <div class="page order-page">
-
-
-        </div>
-
         
-<img src="" alt="">
+
+            <div class="page order-page">
+
+                <div class="container">
+
+                    <div class="top">
+
+                        <div class="order vehical-name">  </div>
+
+                        <div class="order vehical-img">   </div>
+
+                        <div class="order vehical-year"> <div> Model year</div>  <div class="this-car-year"> </div>  </div>
+
+                        <div class="order vehical-odometer"> <div> Current Odometer</div> <div class="this-car-odometer"> </div> </div>
+                       
+                        <div class="order vehical-seats"> <div> Seats</div>  <div class="this-car-seats"> </div>  </div>
+
+                    </div>
+
+                    <div class="order-middle">
+
+                        <p>Cost</p>
+
+                    </div>
+
+                    <div class="bottom">
+
+                        <div class="order order-insurance"> <div> Insurance </div>  <div class="this-car-insurance"> </div>  </div>
+
+                        <div class="order order-fule-cost"> <div> Fule cost</div> <div class="this-car-Fule"> </div> fill me in </div>
+                       
+                        <div class="order order-day-rate"> <div> Day rate</div>  <div class="this-car-day-rate"> </div>  </div>
+
+                        <div class="order total"> <div> Total</div>  <div class="this-car-total"> </div>  </div>
+
+                    </div>
+
+                    
+                </div>
+
+
+                <input  id= "continue-btn" class="order-pg-btn" type="submit">
+            </div>
+
+
+            <div class="confirm-order-page">
+
+                <p>Thank you for your order, we will send you an email verifcation shortly</p>
+            </div>
+            
 
 
 

@@ -22,6 +22,22 @@
     justify-content: space-between;
 }
 
+.order{
+    display: flex;
+    justify-content: space-between;
+}
+.order-middle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .direction{
     background-color: red;
+}
+
+.flatpickr-calendar{
+
+    background-color:0;
+    background-color:red;
 }
