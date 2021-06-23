@@ -181,8 +181,11 @@ $('.welcome-pg-btn').click(function () {
 
 //2nd page
 // upon click of departure city , save that value , post to live recept update and open next page
+let eldeparture
 
 function displayDepature() {
+
+    
 
     let html = ""
     for (let i = 0; i < citys.length; i++) {
@@ -200,7 +203,7 @@ function displayDepature() {
     $('.depature-link').click(function () {
         console.log('click')
 
-        let eldeparture = this.innerText;
+        eldeparture = this.innerText;
         console.log(eldeparture);
         runningTotal.departure = eldeparture
 
@@ -208,6 +211,22 @@ function displayDepature() {
         plublishRunningInfo(`<div class = 'running user-journey'> <div> ${runningTotal.departure} </div> <div> --> </div> <div></div> </div>`);
         $('.departure-location').hide()
         $('.arrival-location').show()
+
+        
+    })
+
+    $('.departure-bk-btn').click(function(){
+        
+        $('.departure-location').hide()
+        $('.welcome-page').show()
+        $('.user-Name').remove()
+        $('#user-name-input').val('')
+        toggleContinueButton();
+
+        eldeparture = ""
+        
+
+
     })
 }
 
@@ -215,6 +234,8 @@ function displayDepature() {
 
 //3rd page
 // upon click of departure city , save that value , post to live recept update and open next page
+
+let elarrival ="";
 
 function displayArrival() {
 
@@ -236,7 +257,7 @@ function addArrivalClicks() {
 
         console.log('click')
 
-        let elarrival = this.innerText;
+        elarrival = this.innerText;
         console.log(elarrival);
         runningTotal.desitnation = elarrival
 
@@ -250,6 +271,15 @@ function addArrivalClicks() {
 
 }
 
+    $('.arrival-bk-btn').click(function(){
+            
+        $('.departure-location').show()
+        $('.arrival-location').hide()
+        $('.user-journey').hide()
+        
+
+        elarrival = ""
+    })
 
 //4th page
 
@@ -263,10 +293,12 @@ $("#date-input").flatpickr(
     }
 );
 
+let date = ""
+
 $('#date-input').blur(function () {
 
 
-    const date = $('#date-input').val();
+    date = $('#date-input').val();
 
 
 
@@ -296,6 +328,20 @@ $('.dates-pg-btn').click(function () {
 
 });
 
+$('.duration-bk-btn').click(function(){
+            
+    $('.arrival-location').show()
+    $('.trip-duration').hide()
+    $('.travel-dates').remove()
+    $('.journey-min-dist').remove()
+    $('.user-journey').remove()
+    plublishRunningInfo(`<div class = 'running user-journey'> <div> ${runningTotal.departure} </div> <div> --> </div> <div></div> </div>`);
+    
+
+    elarrival = ""
+})
+
+
 // 5th page;
 
 for (let i = 0; i < maxPassengers; i++) {
@@ -320,17 +366,31 @@ function addPassengerClicks() {
         runningTotal.passengerCount = elPassengerCountNumber;
 
 
-        plublishRunningInfo(`<div class = 'running passenger-count-total'> <div> Total passengers </div> <div> ${runningTotal.passengerCount} </div></div>`);
+        plublishRunningInfo(`<div class ='running passenger-count-total'> <div> Total passengers </div> <div> ${runningTotal.passengerCount} </div></div>`);
 
 
         $('.passenger-count').hide()
         $('.running-info-update').hide()
 
-        $('.review').show()
+        $('.review-pg').show()
 
 
 
 
+    })
+
+    $('.passenger-count-bk-btn').click(function(){
+            
+        
+
+        $('.passenger-count').hide()
+        $('.trip-duration').show()
+        $('.passenger-count-total').remove()
+        $('.travel-dates').remove()
+        
+        
+    
+       
     })
 
 }
@@ -340,9 +400,26 @@ function addPassengerClicks() {
 $('.review-pg-btn').click(function () {
 
     displayFilterdVehicles()
-    $('.review').hide()
+    $('.review-pg').hide()
 
     $('.avalible-vehicles').show()
+})
+
+$('.review-bk-btn').click(function(){
+            
+    
+
+    $('.review-pg').hide()
+    $('.passenger-count').show()
+    $('.running-info-update').show()
+    $('.passenger-count-total').hide()
+    
+    
+    
+    
+    
+
+   
 })
 
 
@@ -386,7 +463,7 @@ function displayFilterdVehicles() {
 
         if (totalNum === 0) {
             console.log('no vehicals avalible')
-            $('.avalible-vehicles-icons').append(' no vehicals avalible')
+            $('.avalible-vehicles-icons').html(' No vehicals avalible')
 
         } else {
 
@@ -414,6 +491,7 @@ function displayFilterdVehicles() {
                 populateOrderPage(selectedVehicle)
 
                 $('.avalible-vehicles').hide()
+                $('.order-page').show()
                 
                 
             });
@@ -429,12 +507,28 @@ function displayFilterdVehicles() {
 }
 
 
+$('.avalible-vehicle-bk-btn').click(function(){
+            
+    
+
+    $('.avalible-vehicles').hide()
+    $('.review-pg').show()
+    
+    
+    
+    
+})
+
+
+
+
+
 //8th page
 
 function populateOrderPage(selectedVehicle){
 
     $('.vehical-name').html(selectedVehicle.name)
-    $('.vehical-img').html(selectedVehicle.img)// do when you have images 
+   // $('.vehical-img').html(selectedVehicle.img)// do when you have images 
     $('.this-car-year').html(selectedVehicle.year)
 
     $('.this-car-odometer').html(selectedVehicle.odo)
@@ -449,9 +543,25 @@ function populateOrderPage(selectedVehicle){
 
 
 
-    $('.order-page').show()
+     
 
 }
+
+
+$('.order-bk-btn').click(function(){
+            
+    
+
+    $('.order-page').hide()
+    $('.avalible-vehicles').show()
+    
+    
+    
+    
+})
+
+//9th page
+
 
 $('.order-pg-btn').click(function(){
     $('.order-page').hide()
@@ -483,7 +593,7 @@ function hidePages() {
     $('.arrival-location').hide()
     $('.trip-duration').hide()
     $('.passenger-count').hide()
-    $('.review').hide()
+    $('.review-pg').hide()
     $('.avalible-vehicles').hide()
     $('.order-page').hide()
     $('.confirm-order-page').hide()

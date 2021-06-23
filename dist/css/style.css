@@ -10,8 +10,18 @@
   display: none;
 }
 
+.btn-foot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .running-info-update {
   background-color: grey;
+}
+
+.btn-foot {
+  background-color: green;
 }
 
 .liveUpdate {
