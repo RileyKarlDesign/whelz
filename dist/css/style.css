@@ -52,4 +52,13 @@
   background-color: 0;
   background-color: red;
 }
+
+#mapid {
+  height: 400px;
+  width: 400px;
+}
+
+#mapid {
+  display: none;
+}
 /*# sourceMappingURL=style.css.map */

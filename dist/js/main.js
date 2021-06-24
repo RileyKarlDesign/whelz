@@ -18,50 +18,50 @@ const citys = [
     {
 
         name: "Auckland",
-        lat: "36.8500",
-        lng: "174.7833",
+        lat: -36.8508,
+        lng: 174.7645
 
     },
     {
 
         name: "Wellington",
-        lat: "-41.2889",
-        lng: "174.7772",
+        lat: -41.2889,
+        lng: 174.7772
 
     },
 
     {
 
         name: "Christchurch",
-        lat: "-43.5309",
-        lng: "172.6365",
+        lat: -43.5309,
+        lng: 172.6365
 
     },
     {
 
         name: "Manukau City",
-        lat: "36.9833",
-        lng: "174.8833",
+        lat: -36.9833,
+        lng: 174.8833
 
     },
     {
 
         name: "Waitakere",
-        lat: "36.8490",
-        lng: "174.5430",
+        lat: -36.8490,
+        lng: 174.5430,
     },
     {
 
         name: "Northcote",
-        lat: "36.7913",
-        lng: "174.7758",
+        lat: -36.7913,
+        lng: 174.7758,
 
     },
     {
 
         name: "Hamilton",
-        lat: "37.7833",
-        lng: "175.2833",
+        lat: -37.7833,
+        lng: 175.2833,
 
     }
 
@@ -106,7 +106,7 @@ const vehicles = [
         odo: "35,000",
         insurance: "$150",
         seats: "5",
-        fuleUsage: "Mid",
+        fuleUsage: "mid",
         location: 'Wellington',
         dayRate: '$70',
         id: 3
@@ -114,6 +114,8 @@ const vehicles = [
     },
 
 ]
+
+let fulecost =''
 
 const maxPassengers = 5;
 
@@ -191,10 +193,12 @@ function displayDepature() {
     for (let i = 0; i < citys.length; i++) {
 
         // $('departure-list').append( ` <li id="#depature-location">${citys[i].name}</li>`)
-        html += ` <li class="depature-link">${citys[i].name}</li>`;
+        html += ` <li class="depature-link" data-lat="${citys[i].lat}" data-lng="${citys[i].lng}">${citys[i].name}</li>`;
 
     }
 
+    
+    
     $('.deapture-list').append(html)
 
 
@@ -204,6 +208,10 @@ function displayDepature() {
         console.log('click')
 
         eldeparture = this.innerText;
+
+        
+
+
         console.log(eldeparture);
         runningTotal.departure = eldeparture
 
@@ -212,6 +220,10 @@ function displayDepature() {
         $('.departure-location').hide()
         $('.arrival-location').show()
 
+        depatureLatCords =  $(this).data('lat');
+        depatureLngCords =    $(this).data('lng');
+
+        
         
     })
 
@@ -243,7 +255,7 @@ function displayArrival() {
     for (let i = 0; i < citys.length; i++) {
 
         // $('departure-list').append( ` <li id="#depature-location">${citys[i].name}</li>`)
-        html += ` <li class="arrival-link">${citys[i].name}</li>`;
+        html += ` <li class="arrival-link" data-lat="${citys[i].lat}" data-lng="${citys[i].lng}">${citys[i].name}</li>`;
 
     }
 
@@ -261,11 +273,22 @@ function addArrivalClicks() {
         console.log(elarrival);
         runningTotal.desitnation = elarrival
 
-        $('.user-journey').html(` <div> ${runningTotal.departure} </div>   <div> --> </div>   <div> ${runningTotal.desitnation}</div> `);
-        plublishRunningInfo(`<div class ='running journey-min-dist'> <div> Min Distance </div> <div>${runningTotal.distance}</div></div>`);
+        arrivalLatCords =  $(this).data('lat');
+        arrivalLngCords =    $(this).data('lng');
+         mapHandler()
 
+        $('.user-journey').html(` <div> ${runningTotal.departure} </div>   <div> --> </div>   <div> ${runningTotal.desitnation}</div> `);
+        plublishRunningInfo(`<div class ='running journey-min-dist'> <div> Min Distance </div> <div>${minDis} km</div></div>`);
+
+        
+
+       
+        
         $('.arrival-location').hide()
         $('.trip-duration').show()
+
+       
+
 
     })
 
@@ -283,13 +306,19 @@ function addArrivalClicks() {
 
 //4th page
 
+let tripDurationDays = 0;
 
 $("#date-input").flatpickr(
 
     {
         mode: "range",
         minDate: "today",
-    dateFormat: "Y-m-d"
+        dateFormat: 'n/j/Y',
+        onClose: function(selectedDates, dateStr, instance) {
+          let daysInRange = document.getElementsByClassName('inRange');
+          tripDurationDays = daysInRange.length + 1;
+          console.log(`total days = ${tripDurationDays}`);
+        }
     }
 );
 
@@ -485,10 +514,22 @@ function displayFilterdVehicles() {
                     }
 
 
+
+
                 });
 
                 console.log(selectedVehicle)
                 populateOrderPage(selectedVehicle)
+
+                
+
+                    
+                    
+                
+                
+               
+
+                
 
                 $('.avalible-vehicles').hide()
                 $('.order-page').show()
@@ -525,7 +566,13 @@ $('.avalible-vehicle-bk-btn').click(function(){
 
 //8th page
 
+let fuleCost
+
+
+
 function populateOrderPage(selectedVehicle){
+
+    
 
     $('.vehical-name').html(selectedVehicle.name)
    // $('.vehical-img').html(selectedVehicle.img)// do when you have images 
@@ -537,8 +584,8 @@ function populateOrderPage(selectedVehicle){
 
 
     $('.this-car-insurance').html(selectedVehicle.insurance)
-    $('.this-car-cost').html(`Est-xxx`)/// do when you have fule cost 
-    $('.this-car-day-rate').html(`total days x ${selectedVehicle.dayRate}`)
+    $('.this-car-fule').html(fuleCost)/// do when you have fule cost 
+    $('.this-car-day-rate').html(`${tripDurationDays} x ${selectedVehicle.dayRate}`)
     $('.this-car-total').html(`fill me in`)
 
 
@@ -563,11 +610,19 @@ $('.order-bk-btn').click(function(){
 //9th page
 
 
+
 $('.order-pg-btn').click(function(){
     $('.order-page').hide()
     $('.confirm-order-page').show()
     
 })
+
+
+
+
+// fule
+
+
 
 
 

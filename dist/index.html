@@ -12,13 +12,29 @@
     <title>Whelz</title>
     <link rel="stylesheet" href="css/style.css">
     <script  defer  src="js/main.js"></script>
+    <script  defer  src="js/map.js"></script>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin=""/>
+ 
+     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
 
     <link rel="stylesheet" type="text/css" href="https://npmcdn.com/flatpickr/dist/themes/airbnb.css">
 
-    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+   
+    
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+   integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+   crossorigin=""></script>
 
+   <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.css" />
+   <script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
 </head>
 <body>
+
+   
     <div class="container">
 <!-- =================================================================================================== -->
         <div class="welcome-page">
@@ -151,7 +167,7 @@
 
                         <div class="order order-insurance"> <div> Insurance </div>  <div class="this-car-insurance"> </div>  </div>
 
-                        <div class="order order-fule-cost"> <div> Fule cost</div> <div class="this-car-Fule"> </div> fill me in </div>
+                        <div class="order order-fule-cost"> <div> Fule cost</div> <div class="this-car-fule"> </div>  </div>
                        
                         <div class="order order-day-rate"> <div> Day rate</div>  <div class="this-car-day-rate"> </div>  </div>
 
@@ -174,7 +190,7 @@
                 <p>Thank you for your order, we will send you an email verifcation shortly</p>
             </div>
 <!-- =================================================================================================== -->            
-
+    <div id="mapid"></div>
 
 
     </div>
