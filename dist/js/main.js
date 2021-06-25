@@ -70,7 +70,7 @@ const citys = [
 
 
 
-const vehicles = [
+let vehicles = [
 
 
     {
@@ -78,24 +78,27 @@ const vehicles = [
         name: "ford Festa",
         year: "2016",
         odo: "60,000",
-        insurance: "$150",
+        insurance: 150,
         seats: "5",
         fuleUsage: "low",
         location: 'Auckland',
-        dayRate: '60$',
-        id: 1
+        dayRate: 60,
+        
 
+        id: 1
+        
     },
     {
         type: "Motor Bike",
         name: "Kawasaki Ninja",
         year: "2015",
         odo: "25,000",
-        insurance: "$150",
+        insurance: 150,
         seats: "2",
         fuleUsage: "low",
         location: 'Auckland',
-        dayRate: '$50',
+        dayRate: 50,
+        
         id: 2
 
     },
@@ -104,18 +107,63 @@ const vehicles = [
         name: "Nissan Cube",
         year: "2018",
         odo: "35,000",
-        insurance: "$150",
+        insurance: 150,
         seats: "5",
         fuleUsage: "mid",
         location: 'Wellington',
-        dayRate: '$70',
+        dayRate: 70,
+        
         id: 3
+
+    },
+
+    {
+        type: "Car",
+        name: "ford Festa",
+        year: "2016",
+        odo: "60,000",
+        insurance: 150,
+        seats: "5",
+        fuleUsage: "low",
+        location: 'Auckland',
+        dayRate: 60,
+        
+
+        id: 4
+        
+    },
+    {
+        type: "Motor Bike",
+        name: "Kawasaki Ninja",
+        year: "2015",
+        odo: "25,000",
+        insurance: 150,
+        seats: "2",
+        fuleUsage: "low",
+        location: 'Auckland',
+        dayRate: 50,
+        
+        id: 5
+
+    },
+    {
+        type: "Van",
+        name: "Nissan Cube",
+        year: "2015",
+        odo: "25,000",
+        insurance: 150,
+        seats: "25",
+        fuleUsage: "low",
+        location: 'Auckland',
+        dayRate: 70,
+        
+        id: 6
 
     },
 
 ]
 
-let fulecost =''
+
 
 const maxPassengers = 5;
 
@@ -354,6 +402,28 @@ $('.dates-pg-btn').click(function () {
     $('.passenger-count').show()
 
     plublishRunningInfo(`<div class = ' running travel-dates'> <div>Dates</div>  <div/>${runningTotal.dates}<div> <div>`);
+    
+    for( vehicle of vehicles){
+
+        if ( vehicle.fuleUsage === 'low'){
+            console.log( 'low fule usage')
+    
+            vehicle.carFuleCost = (0.18*minDis);
+            
+    
+        } else if ( vehicle.fuleUsage === 'med') {
+            
+            vehicle.carFuleCost = (0.24*minDis);
+            
+        } else if ( vehicle.fuleUsage === 'high') {
+            
+            vehicle.carFuleCost = (0.29*minDis);
+            
+        } 
+
+
+    }
+   
 
 });
 
@@ -403,6 +473,9 @@ function addPassengerClicks() {
 
         $('.review-pg').show()
 
+       
+
+   
 
 
 
@@ -418,7 +491,7 @@ function addPassengerClicks() {
         $('.travel-dates').remove()
         
         
-    
+      
        
     })
 
@@ -426,12 +499,15 @@ function addPassengerClicks() {
 
 //6th page
 
+
 $('.review-pg-btn').click(function () {
 
     displayFilterdVehicles()
     $('.review-pg').hide()
 
     $('.avalible-vehicles').show()
+
+    
 })
 
 $('.review-bk-btn').click(function(){
@@ -445,10 +521,6 @@ $('.review-bk-btn').click(function(){
     
     
     
-    
-    
-
-   
 })
 
 
@@ -472,9 +544,10 @@ function displayFilterdVehicles() {
     //    console.log(avalibleVehicles)
     let html = ""
     let totalNum = 0;
+
+
     for (vehicle of vehicles) {
         
-
 
 
 
@@ -483,7 +556,7 @@ function displayFilterdVehicles() {
             console.log(vehicle)
             totalNum += 1
 
-            html += (`<div class="vehicle-icon" data-id='${vehicle.id}'> <img src="${vehicle.img}" alt=""> ${vehicle.name}  estimated price  </div>`)
+            html += (`<div class="vehicle-icon" data-id='${vehicle.id}'> <img src="${vehicle.img}" alt=""> <div> ${vehicle.name} </div> <div>  ${vehicle.dayRate} Per day</div>   </div>`)
 
 
 
@@ -505,14 +578,19 @@ function displayFilterdVehicles() {
                 
                 const id = parseInt($(this).data('id'));
 
+              
                 selectedVehicle =  vehicles.find(function (vehicle) {
+                   
                     if (vehicle.id === id) {
                         
-                        return true;
+                        
                         
 
+                        
+                        return true;
                     }
 
+                   
 
 
 
@@ -566,13 +644,14 @@ $('.avalible-vehicle-bk-btn').click(function(){
 
 //8th page
 
-let fuleCost
+
 
 
 
 function populateOrderPage(selectedVehicle){
 
     
+    addTotal()
 
     $('.vehical-name').html(selectedVehicle.name)
    // $('.vehical-img').html(selectedVehicle.img)// do when you have images 
@@ -583,15 +662,24 @@ function populateOrderPage(selectedVehicle){
 
 
 
-    $('.this-car-insurance').html(selectedVehicle.insurance)
-    $('.this-car-fule').html(fuleCost)/// do when you have fule cost 
-    $('.this-car-day-rate').html(`${tripDurationDays} x ${selectedVehicle.dayRate}`)
-    $('.this-car-total').html(`fill me in`)
+    $('.this-car-insurance').html(`$${selectedVehicle.insurance}`)
+    $('.this-car-fule').html( `$${selectedVehicle.carFuleCost} `)/// do when you have fule cost 
+    $('.this-car-day-rate').html(`${tripDurationDays} x $${selectedVehicle.dayRate}`)
+    $('.this-car-total').html(`$${shortTotal}`)
 
 
-
+    
      
 
+}
+
+let total= 0;
+let shortTotal = 0 ;
+
+function addTotal(){
+
+    total = selectedVehicle.insurance + selectedVehicle.carFuleCost + (tripDurationDays*selectedVehicle.dayRate);
+    shortTotal = total.toFixed(2);
 }
 
 
