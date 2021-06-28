@@ -1,93 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
     <title>Whelz</title>
     <link rel="stylesheet" href="css/style.css">
-    <script  defer  src="js/main.js"></script>
-    <script  defer  src="js/map.js"></script>
+    <script defer src="js/main.js"></script>
+    <script defer src="js/map.js"></script>
 
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
-    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
-    crossorigin=""/>
- 
-     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+        integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+        crossorigin="" />
+
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 
 
     <link rel="stylesheet" type="text/css" href="https://npmcdn.com/flatpickr/dist/themes/airbnb.css">
 
-   
-    
-    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
-   integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
-   crossorigin=""></script>
 
-   <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.css" />
-   <script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
+
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+        crossorigin=""></script>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.css" />
+    <script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
 </head>
+
 <body>
 
-   
+
     <div class="container">
-<!-- =================================================================================================== -->
+        <!-- =================================================================================================== -->
         <div class="welcome-page">
-            
-            <h3>Welcome to Whelz, We can orginise you a vicheal from all over New Zealand.
-                Please enter you name to begin the short ordering process  </h3>
- 
+
+            <div class="welcome-message">
+                <h3>Welcome to Whelz, We can orginise you a vicheal from all over New Zealand.
+                    Please enter you name to begin the short ordering process </h3>
+            </div>
+            <div class="bottom-half">
                 <P class="direction"> enter name </P>
+                <div class="welcome-form">
+                    <label for="user-name-input"> Full Name</label>
+                    <input type="text" id="user-name-input">
+                </div>
+                <div class=" welcome-btn-foot btn-foot"> <input id="continue-btn" class="welcome-pg-btn" type="submit">
+                </div>
 
-                <label for="user-name-input"> Full Name</label>
-                <input type="text" id="user-name-input">
-
-                <input  id= "continue-btn" class="welcome-pg-btn" type="submit">
-                
+            </div>
         </div>
-<!-- =================================================================================================== -->
+        <!-- =================================================================================================== -->
         <div class=" page running-info-update">
 
             <div class="live-update"> </div>
 
-            
+
         </div>
 
-<!-- =================================================================================================== -->        
+        <!-- =================================================================================================== -->
         <div class="page departure-location">
+            <div class="citys-bottom-half">
 
-            <P class="direction"> Departure Location </P>
+                <p class="direction"> Departure Location </p>
 
-            <ul class="deapture-list">
+                <div class="list-box">
+                    <ul class="deapture-list">
 
-                
-            </ul>
 
-            <div class="btn-foot">  <div class="departure-bk-btn bk-btn"><img src="imgs/bk-arrow.png" alt=""> </div></div>
+                    </ul>
+                </div>
 
+                <div class="btn-foot">
+                    <div class="departure-bk-btn bk-btn"><img src="imgs/bk-arrow.png" alt=""> </div>
+                </div>
+            </div>
         </div>
 
-<!-- =================================================================================================== -->        
+        <!-- =================================================================================================== -->
         <div class="page arrival-location">
 
-            <P class="direction"> Arrival Location </P>
+            <p class="direction"> Arrival Location </p>
 
             <ul class="arrival-list">
 
-                
+
 
             </ul>
 
-            <div class="btn-foot">  <div class="arrival-bk-btn bk-btn"> <img src="imgs/bk-arrow.png" alt=""> </div></div>
+            <div class="btn-foot">
+                <div class="arrival-bk-btn bk-btn"> <img src="imgs/bk-arrow.png" alt=""> </div>
+            </div>
 
         </div>
-<!-- =================================================================================================== -->
-       
+        <!-- =================================================================================================== -->
+
         <div class=" page trip-duration">
 
             <P class="direction"> Travel Dates</P>
@@ -95,111 +109,146 @@
             <label for="date-input">Select trvel dates</label>
             <input type="text" id="date-input">
 
-            
-            <div class="btn-foot">  <div class="duration-bk-btn bk-btn"><img src="imgs/bk-arrow.png" alt=""></div> <input  id= "continue-btn" class="dates-pg-btn" type="submit"> </div>
+
+            <div class="btn-foot">
+                <div class="duration-bk-btn bk-btn"><img src="imgs/bk-arrow.png" alt=""></div> <input id="continue-btn"
+                    class="dates-pg-btn" type="submit">
+            </div>
 
         </div>
-<!-- =================================================================================================== -->
+        <!-- =================================================================================================== -->
 
         <div class="page passenger-count">
 
             <P class="direction"> Passenger Count</P>
             <ul class=" passenger-count-list">
-                
+
             </ul>
 
-            <div class="btn-foot">  <div class="passenger-count-bk-btn bk-btn"><img src="imgs/bk-arrow.png" alt=""></div> </div>
+            <div class="btn-foot">
+                <div class="passenger-count-bk-btn bk-btn"><img src="imgs/bk-arrow.png" alt=""></div>
+            </div>
 
         </div>
-<!-- =================================================================================================== -->        
+        <!-- =================================================================================================== -->
 
-       
+
         <div class="page review-pg">
             <P class="direction"> review </P>
             <div class=" page running-info-update-review">
 
                 <div class="live-update"> </div>
-    
-            </div>
-    
 
-            
-            <div class="btn-foot">  <div class="review-bk-btn bk-btn"><img src="imgs/bk-arrow.png" alt=""></div> <input  id= "continue-btn" class="review-pg-btn" type="submit"> </div>
+            </div>
+
+
+
+            <div class="btn-foot">
+                <div class="review-bk-btn bk-btn"><img src="imgs/bk-arrow.png" alt=""></div> <input id="continue-btn"
+                    class="review-pg-btn" type="submit">
+            </div>
 
 
         </div>
-<!-- =================================================================================================== -->
+        <!-- =================================================================================================== -->
         <div class="page avalible-vehicles">
             <P class="direction"> Avalible Vehicle</P>
 
             <div class="avalible-vehicles-icons">
 
-                
+
 
 
             </div>
 
-            <div class="btn-foot">  <div class="avalible-vehicle-bk-btn bk-btn"><img src="imgs/bk-arrow.png" alt=""> </div></div>
+            <div class="btn-foot">
+                <div class="avalible-vehicle-bk-btn bk-btn"><img src="imgs/bk-arrow.png" alt=""> </div>
+            </div>
         </div>
-<!-- =================================================================================================== -->
-         <div class="page order-page">
+        <!-- =================================================================================================== -->
+        <div class="page order-page">
 
-                <div class="container">
+            <div class="container">
 
-                    <div class="top">
+                <div class="top">
 
-                        <div class="order vehical-name">  </div>
+                    <div class="order vehical-name"> </div>
 
-                        <div class="order vehical-img">   </div>
+                    <div class="order vehical-img"> </div>
 
-                        <div class="order vehical-year"> <div> Model year</div>  <div class="this-car-year"> </div>  </div>
-
-                        <div class="order vehical-odometer"> <div> Current Odometer</div> <div class="this-car-odometer"> </div> </div>
-                       
-                        <div class="order vehical-seats"> <div> Seats</div>  <div class="this-car-seats"> </div>  </div>
-
+                    <div class="order vehical-year">
+                        <div> Model year</div>
+                        <div class="this-car-year"> </div>
                     </div>
 
-                    <div class="order-middle">
-
-                        <p>Cost</p>
-
+                    <div class="order vehical-odometer">
+                        <div> Current Odometer</div>
+                        <div class="this-car-odometer"> </div>
                     </div>
 
-                    <div class="bottom">
-
-                        <div class="order order-insurance"> <div> Insurance </div>  <div class="this-car-insurance"> </div>  </div>
-
-                        <div class="order order-fule-cost"> <div> Fule cost</div> <div class="this-car-fule"> </div>  </div>
-                       
-                        <div class="order order-day-rate"> <div> Day rate</div>  <div class="this-car-day-rate"> </div>  </div>
-
-                        <div class="order total"> <div> Total</div>  <div class="this-car-total"> </div>  </div>
-
+                    <div class="order vehical-seats">
+                        <div> Seats</div>
+                        <div class="this-car-seats"> </div>
                     </div>
 
-                    
                 </div>
 
-                <div class="btn-foot">  <div class="order-bk-btn bk-btn"> <img src="imgs/bk-arrow.png" alt=""></div> <input  id= "continue-btn" class="order-pg-btn" type="submit"> </div>
-                
+                <div class="order-middle">
 
-                
+                    <p>Cost</p>
+
+                </div>
+
+                <div class="bottom">
+
+                    <div class="order order-insurance">
+                        <div> Insurance </div>
+                        <div class="this-car-insurance"> </div>
+                    </div>
+
+                    <div class="order order-fule-cost">
+                        <div> Fule cost</div>
+                        <div class="this-car-fule"> </div>
+                    </div>
+
+                    <div class="order order-day-rate">
+                        <div> Day rate</div>
+                        <div class="this-car-day-rate"> </div>
+                    </div>
+
+                    <div class="order total">
+                        <div> Total</div>
+                        <div class="this-car-total"> </div>
+                    </div>
+
+                </div>
+
+
             </div>
-<!-- =================================================================================================== -->
 
-            <div class="confirm-order-page">
-
-                <p>Thank you for your order, we will send you an email verifcation shortly</p>
+            <div class="btn-foot">
+                <div class="order-bk-btn bk-btn"> <img src="imgs/bk-arrow.png" alt=""></div> <input id="continue-btn"
+                    class="order-pg-btn" type="submit">
             </div>
-<!-- =================================================================================================== -->            
-    <div id="mapid"></div>
+
+
+
+        </div>
+        <!-- =================================================================================================== -->
+
+        <div class="confirm-order-page">
+
+            <p>Thank you for your order, we will send you an email verifcation shortly</p>
+        </div>
+        <!-- =================================================================================================== -->
+        <div id="mapid"></div>
 
 
     </div>
 
-    
+
 
 
 </body>
-</html> 
+
+</html>

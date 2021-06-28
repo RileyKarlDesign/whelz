@@ -16,14 +16,6 @@
   align-items: center;
 }
 
-.running-info-update {
-  background-color: grey;
-}
-
-.btn-foot {
-  background-color: green;
-}
-
 .liveUpdate {
   width: 100%;
 }
@@ -44,10 +36,6 @@
   align-items: center;
 }
 
-.direction {
-  background-color: red;
-}
-
 .flatpickr-calendar {
   background-color: 0;
   background-color: red;
@@ -60,5 +48,121 @@
 
 #mapid {
   display: none;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+.livepdate {
+  display: flex;
+}
+
+.container {
+  background-color: #243a24;
+  color: white;
+  height: 100vh;
+  width: 100vw;
+  padding: 1em;
+  overflow: hidden;
+}
+
+.direction {
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
+  padding: 0.2em 0;
+}
+
+.container {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.running-info-update {
+  background-color: #11ec6d;
+}
+
+.welcome-page {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.welcome-page h3 {
+  font-size: 1.3em;
+  margin: 0.3em 0;
+}
+
+.welcome-message {
+  height: 20%;
+}
+
+.bottom-half {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.welcome-form {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding-bottom: 5em;
+}
+
+#user-name-input {
+  height: 5em;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.37);
+}
+
+.welcome-btn-foot {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.welcome-pg-btn {
+  height: 3em;
+  width: 50%;
+  border-radius: 2em;
+  outline: none;
+  border: none;
+  text-align: right;
+  padding-right: 1.7em;
+}
+
+.btn-foot {
+  height: 3.5em;
+  border-top: 1px solid white;
+  background-color: maincolor;
+}
+
+.running-info-update {
+  height: 20%;
+}
+
+.departure-location {
+  height: 80%;
+}
+
+.deapture-list {
+  font-size: 1.7em;
+  padding-top: 1em;
+}
+
+.citys-bottom-half {
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.list-box {
+  height: 100%;
+  overflow: scroll;
 }
 /*# sourceMappingURL=style.css.map */

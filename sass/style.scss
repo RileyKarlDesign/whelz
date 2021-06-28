@@ -16,13 +16,9 @@
     align-items: center;
 }
 
-.running-info-update{
-    background-color: grey;
-}
 
-.btn-foot{
-    background-color: green;
-}
+
+
 
 .liveUpdate{
     width : 100%;
@@ -42,9 +38,7 @@
     align-items: center;
 }
 
-.direction{
-    background-color: red;
-}
+
 
 .flatpickr-calendar{
 
@@ -58,3 +52,12 @@ width: 400px; }
 #mapid{
     display: none;
 }
+
+
+@import 'main.scss';
+@import 'font.scss';
+@import 'cards.scss';
+ @import 'welcomepage.scss';
+ @import 'btn.scss';
+ @import 'running-Info';
+ @import 'departure';

@@ -59,11 +59,93 @@ const citys = [
     },
     {
 
-        name: "Hamilton",
-        lat: -37.7833,
-        lng: 175.2833,
+        name: "Northcote",
+        lat: -36.7913,
+        lng: 174.7758,
 
-    }
+    },
+
+    {
+
+        name: "Northcote",
+        lat: -36.7913,
+        lng: 174.7758,
+
+    },
+
+    {
+
+        name: "Northcote",
+        lat: -36.7913,
+        lng: 174.7758,
+
+    },
+
+    {
+
+        name: "Northcote",
+        lat: -36.7913,
+        lng: 174.7758,
+
+    },
+
+    {
+
+        name: "Northcote",
+        lat: -36.7913,
+        lng: 174.7758,
+
+    },
+
+    {
+
+        name: "Northcote",
+        lat: -36.7913,
+        lng: 174.7758,
+
+    },
+
+    {
+
+        name: "Northcote",
+        lat: -36.7913,
+        lng: 174.7758,
+
+    },
+
+    {
+
+        name: "Northcote",
+        lat: -36.7913,
+        lng: 174.7758,
+
+    },
+    {
+
+        name: "Northcote",
+        lat: -36.7913,
+        lng: 174.7758,
+
+    },
+    {
+
+        name: "Northcote",
+        lat: -36.7913,
+        lng: 174.7758,
+
+    },
+    {
+
+        name: "Northcote",
+        lat: -36.7913,
+        lng: 174.7758,
+
+    },
+
+
+    
+
+    
 
 
 ]
@@ -220,6 +302,7 @@ $('.welcome-pg-btn').click(function () {
 
     $('.welcome-page').hide()
     $('.departure-location').show()
+    $('.running-info-update').show()
 
     plublishRunningInfo(`<div class = 'running user-Name'> <div> Name</div> <div> ${runningTotal.name} </div> </div>`);
 
@@ -278,6 +361,7 @@ function displayDepature() {
     $('.departure-bk-btn').click(function(){
         
         $('.departure-location').hide()
+        $('.running-info-update').hide()
         $('.welcome-page').show()
         $('.user-Name').remove()
         $('#user-name-input').val('')
@@ -421,6 +505,7 @@ $('.dates-pg-btn').click(function () {
             
         } 
 
+        
 
     }
    
@@ -740,6 +825,7 @@ function hidePages() {
     $('.avalible-vehicles').hide()
     $('.order-page').hide()
     $('.confirm-order-page').hide()
+    $('.running-info-update').hide()
 
 }
 

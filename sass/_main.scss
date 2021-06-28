@@ -1,0 +1,33 @@
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+
+$maincolor: rgb(36, 58, 36);
+$whitecolor: white;
+
+
+.livepdate{
+    display: flex;
+}
+.container{
+    background-color: $maincolor;
+    color: $whitecolor;
+    height: 100vh;
+    width: 100vw;
+    padding: 1em;
+    overflow: hidden;
+
+    
+}
+
+.direction{
+    border-top: 1px solid $whitecolor;
+    border-bottom: 1px solid $whitecolor;
+    padding: 0.2em 0;
+ 
+}
+
