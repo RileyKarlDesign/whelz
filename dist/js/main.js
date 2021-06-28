@@ -59,66 +59,45 @@ const citys = [
     },
     {
 
-        name: "Northcote",
-        lat: -36.7913,
-        lng: 174.7758,
+        name: "Hamilton",
+        lat: -37.7833,
+        lng: 175.2833,
+
+    },
+    {
+
+        name: "Auckland",
+        lat: -36.8508,
+        lng: 174.7645
+
+    },
+    {
+
+        name: "Wellington",
+        lat: -41.2889,
+        lng: 174.7772
 
     },
 
     {
 
-        name: "Northcote",
-        lat: -36.7913,
-        lng: 174.7758,
+        name: "Christchurch",
+        lat: -43.5309,
+        lng: 172.6365
 
     },
-
     {
 
-        name: "Northcote",
-        lat: -36.7913,
-        lng: 174.7758,
+        name: "Manukau City",
+        lat: -36.9833,
+        lng: 174.8833
 
     },
-
     {
 
-        name: "Northcote",
-        lat: -36.7913,
-        lng: 174.7758,
-
-    },
-
-    {
-
-        name: "Northcote",
-        lat: -36.7913,
-        lng: 174.7758,
-
-    },
-
-    {
-
-        name: "Northcote",
-        lat: -36.7913,
-        lng: 174.7758,
-
-    },
-
-    {
-
-        name: "Northcote",
-        lat: -36.7913,
-        lng: 174.7758,
-
-    },
-
-    {
-
-        name: "Northcote",
-        lat: -36.7913,
-        lng: 174.7758,
-
+        name: "Waitakere",
+        lat: -36.8490,
+        lng: 174.5430,
     },
     {
 
@@ -129,24 +108,11 @@ const citys = [
     },
     {
 
-        name: "Northcote",
-        lat: -36.7913,
-        lng: 174.7758,
+        name: "Hamilton",
+        lat: -37.7833,
+        lng: 175.2833,
 
     },
-    {
-
-        name: "Northcote",
-        lat: -36.7913,
-        lng: 174.7758,
-
-    },
-
-
-    
-
-    
-
 
 ]
 
@@ -505,7 +471,6 @@ $('.dates-pg-btn').click(function () {
             
         } 
 
-        
 
     }
    
@@ -826,6 +791,7 @@ function hidePages() {
     $('.order-page').hide()
     $('.confirm-order-page').hide()
     $('.running-info-update').hide()
+    
 
 }
 

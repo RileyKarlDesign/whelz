@@ -8,9 +8,15 @@
     padding-right: 1.7em;
 }
 
+.welcome-btn-foot{
+    justify-content: flex-end;
+}
+
 .btn-foot{
     height: 3.5em;
     border-top: 1px solid $whitecolor ;
-    background-color:  maincolor;
-
+    background-color:  $maincolor;
+    display: flex;
+    
 }
+

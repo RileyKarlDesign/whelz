@@ -63,7 +63,7 @@
 
 .container {
   background-color: #243a24;
-  color: white;
+  color: rgba(255, 255, 255, 0.795);
   height: 100vh;
   width: 100vw;
   padding: 1em;
@@ -71,8 +71,8 @@
 }
 
 .direction {
-  border-top: 1px solid white;
-  border-bottom: 1px solid white;
+  border-top: 1px solid rgba(255, 255, 255, 0.795);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.795);
   padding: 0.2em 0;
 }
 
@@ -80,50 +80,35 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.running-info-update {
-  background-color: #11ec6d;
-}
-
 .welcome-page {
   height: 100%;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-}
-
-.welcome-page h3 {
-  font-size: 1.3em;
-  margin: 0.3em 0;
 }
 
 .welcome-message {
   height: 20%;
 }
 
-.bottom-half {
+.page {
+  height: 80%;
   display: flex;
-  height: 100%;
   flex-direction: column;
-  justify-content: space-between;
 }
 
-.welcome-form {
+.head {
+  height: auto;
+}
+
+.main {
+  flex-grow: 2;
   display: flex;
-  height: 100%;
   flex-direction: column;
   justify-content: flex-end;
-  padding-bottom: 5em;
+  padding-bottom: 2em;
 }
 
-#user-name-input {
-  height: 5em;
-  border: none;
-  background-color: rgba(255, 255, 255, 0.37);
-}
-
-.welcome-btn-foot {
-  display: flex;
-  justify-content: flex-end;
+.foot {
+  height: 3em;
+  flex-shrink: 1;
 }
 
 .welcome-pg-btn {
@@ -136,10 +121,15 @@
   padding-right: 1.7em;
 }
 
+.welcome-btn-foot {
+  justify-content: flex-end;
+}
+
 .btn-foot {
   height: 3.5em;
-  border-top: 1px solid white;
-  background-color: maincolor;
+  border-top: 1px solid rgba(255, 255, 255, 0.795);
+  background-color: #243a24;
+  display: flex;
 }
 
 .running-info-update {
@@ -147,22 +137,38 @@
 }
 
 .departure-location {
-  height: 80%;
-}
-
-.deapture-list {
-  font-size: 1.7em;
-  padding-top: 1em;
-}
-
-.citys-bottom-half {
-  flex-direction: column;
-  justify-content: space-between;
   height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .list-box {
   height: 100%;
+}
+
+.bottom-half {
+  display: flex;
+  flex-direction: column;
+  height: 80%;
+}
+
+.list-main {
+  flex-grow: 2;
+  display: flex;
+  flex-direction: column;
+  padding-top: 2em;
   overflow: scroll;
+  height: 10em;
+  font-size: 1.7em;
+}
+
+.arrival-location {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.arrival-list {
+  text-align: right;
 }
 /*# sourceMappingURL=style.css.map */

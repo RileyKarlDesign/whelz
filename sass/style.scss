@@ -54,10 +54,12 @@ width: 400px; }
 }
 
 
-@import 'main.scss';
-@import 'font.scss';
-@import 'cards.scss';
- @import 'welcomepage.scss';
- @import 'btn.scss';
- @import 'running-Info';
- @import 'departure';
+@import 'main';
+@import 'font';
+@import 'cards';
+@import 'welcomepage';
+@import 'btn';
+@import 'running-Info';
+@import 'departure';
+@import 'arrival';
+@import 'input';
