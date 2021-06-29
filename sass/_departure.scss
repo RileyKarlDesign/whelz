@@ -2,6 +2,24 @@
     height: 100%;
     display: flex;
     flex-direction: column;
+
+    .list-main{
+
+        flex-grow:2;
+        display: flex;
+        flex-direction: column;
+        
+        padding-top: 2em;
+        
+        overflow: scroll;
+        height: 10em;
+    
+        font-size: 1.7em;
+        
+        
+        
+        
+        }
 }
 
 .list-box{
@@ -16,21 +34,5 @@
 }
 
 
-.list-main{
 
-    flex-grow:2;
-    display: flex;
-    flex-direction: column;
-    
-    padding-top: 2em;
-    
-    overflow: scroll;
-    height: 10em;
-
-    font-size: 1.7em;
-    
-    
-    
-    
-    }
     

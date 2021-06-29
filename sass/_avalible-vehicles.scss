@@ -1,0 +1,56 @@
+.avalible-vehicles{
+    height: 100%;
+}
+
+.avalible-vehicles-icons{
+    
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-top: 0;
+   
+
+   
+}
+
+.list-main{
+    padding-top: 0;
+    
+}
+
+.inner-container{
+    overflow: scroll;
+    padding-bottom: 1em;
+    height: 100%;
+    
+
+.vehicle-icon{
+    width: 48.75%;
+    
+    border: 1px solid white;
+    padding-top: 48.5%;
+    display: flex;
+    font-size: 0.7em;
+    justify-content: space-between;
+    margin-top: 2.5%;
+    flex-wrap: wrap;
+    
+    img{
+        width: 100%;
+    }
+
+    div{
+        border-top: solid 1px $whitecolor;
+        width: 50%;
+        padding-left: 5px;
+        padding-top: 7px;
+        padding-bottom: 7px;
+        font-size: 0.6em;
+
+    }
+
+    div+div{
+        border-left: solid 1px $whitecolor;
+    }
+}
+}

@@ -20,19 +20,24 @@
 
 .main{
 
-flex-grow: 2;
-display: flex;
-flex-direction: column;
-justify-content: flex-end ;
-padding-bottom: 2em;
-//background-color: indigo;
+    flex-grow: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end ;
+    padding-bottom: 2em;
+    //background-color: indigo;
+    
+    
+    
+    
+    }
 
-
-
-
+.welcome-pg-btn{
+    height: 5em;
 }
 
 .foot{
     height: 3em;
     flex-shrink: 1;
 }
+

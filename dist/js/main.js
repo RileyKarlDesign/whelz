@@ -250,12 +250,12 @@ $('#user-name-input').blur(function () {
     if (!nameRegex.test(elName)) {
 
         console.log('there is an error')
-        this.style.backgroundColor = "red";
+       // this.style.backgroundColor = "red";
 
     } else {
 
         console.log('correct')
-        this.style.backgroundColor = "green";
+       // this.style.backgroundColor = "green";
         runningTotal.name = elName
 
         toggleContinueButton();
@@ -269,6 +269,7 @@ $('.welcome-pg-btn').click(function () {
     $('.welcome-page').hide()
     $('.departure-location').show()
     $('.running-info-update').show()
+    toggleContinueButton()
 
     plublishRunningInfo(`<div class = 'running user-Name'> <div> Name</div> <div> ${runningTotal.name} </div> </div>`);
 
@@ -429,7 +430,7 @@ $('#date-input').blur(function () {
 
 
 
-    if (!date) {
+    if (date = "") {
 
         console.log('there is an error')
         this.style.backgroundColor = "red";
@@ -777,7 +778,7 @@ function plublishRunningInfo(input) {
 
 function toggleContinueButton() {
 
-    $("#continue-btn").toggle();
+    $(".continue-btn").toggle();
 }
 
 function hidePages() {

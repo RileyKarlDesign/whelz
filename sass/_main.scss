@@ -8,11 +8,12 @@
 
 $maincolor: rgb(36, 58, 36);
 $whitecolor: rgba(255, 255, 255, 0.795);
-
+$lightcolor:  rgb(61, 99, 61);
 
 .livepdate{
     display: flex;
 }
+
 .container{
     background-color: $maincolor;
     color: $whitecolor;

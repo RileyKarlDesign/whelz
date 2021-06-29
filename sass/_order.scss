@@ -1,0 +1,55 @@
+.order-page{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+
+    .order-inner-container{
+        display: flex;
+        flex-direction: column;
+        
+        padding-bottom: 0;
+        height: 100%;
+       
+    }
+
+    .main{
+
+        flex-grow: 2;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start ;
+        padding-bottom: 2em;
+        //background-color: indigo;
+        
+        
+        
+        
+        }
+
+        .direction{
+            width: 100%;
+            //background-color: $lightcolor;
+            margin: 1em 0;
+        }
+
+        .cost{
+            display: flex;
+            justify-content: center;
+        }
+    
+}
+
+
+.vehical-img{
+
+
+    height: 50%;
+    background-color: $lightcolor;
+    margin: 2em 0;
+
+  //  border: solid $whitecolor 1px;
+}
+
