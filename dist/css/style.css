@@ -155,7 +155,7 @@
   flex-grow: 2;
   display: flex;
   flex-direction: column;
-  padding-top: 2em;
+  padding-top: 0.3em;
   overflow: scroll;
   height: 10em;
   font-size: 1.7em;
@@ -178,7 +178,7 @@
 }
 
 .arrival-location .list-main {
-  padding-top: 2em;
+  padding-top: 0.3em;
 }
 
 .arrival-list {
@@ -189,7 +189,7 @@
   flex-grow: 2;
   display: flex;
   flex-direction: column;
-  padding-top: 2em;
+  padding-top: 1em;
   overflow: scroll;
   height: 10em;
   font-size: 1.7em;
