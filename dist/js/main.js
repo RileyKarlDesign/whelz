@@ -123,7 +123,7 @@ let vehicles = [
 
     {
         type: "Car",
-        name: "ford Festa",
+        name: "Ford Festa",
         year: "2016",
         odo: "60,000",
         insurance: 150,
@@ -131,14 +131,15 @@ let vehicles = [
         fuleUsage: "low",
         location: 'Auckland',
         dayRate: 60,
+        img: 'imgs/car.png',
         
 
         id: 1
         
     },
     {
-        type: "Motor Bike",
-        name: "Kawasaki Ninja",
+        type: "Scooter",
+        name: "Vespa",
         year: "2015",
         odo: "25,000",
         insurance: 150,
@@ -146,6 +147,7 @@ let vehicles = [
         fuleUsage: "low",
         location: 'Auckland',
         dayRate: 50,
+        img: 'imgs/scooter.png',
         
         id: 2
 
@@ -160,14 +162,13 @@ let vehicles = [
         fuleUsage: "mid",
         location: 'Wellington',
         dayRate: 70,
-        
+        img: 'imgs/van.png',
         id: 3
 
     },
-
     {
         type: "Car",
-        name: "ford Festa",
+        name: "Ford Festa",
         year: "2016",
         odo: "60,000",
         insurance: 150,
@@ -175,14 +176,15 @@ let vehicles = [
         fuleUsage: "low",
         location: 'Auckland',
         dayRate: 60,
+        img: 'imgs/car.png',
         
 
         id: 4
         
     },
     {
-        type: "Motor Bike",
-        name: "Kawasaki Ninja",
+        type: "Scooter",
+        name: "Vespa",
         year: "2015",
         odo: "25,000",
         insurance: 150,
@@ -190,6 +192,7 @@ let vehicles = [
         fuleUsage: "low",
         location: 'Auckland',
         dayRate: 50,
+        img: 'imgs/scooter.png',
         
         id: 5
 
@@ -197,17 +200,23 @@ let vehicles = [
     {
         type: "Van",
         name: "Nissan Cube",
-        year: "2015",
-        odo: "25,000",
+        year: "2018",
+        odo: "35,000",
         insurance: 150,
-        seats: "25",
-        fuleUsage: "low",
+        seats: "5",
+        fuleUsage: "mid",
         location: 'Auckland',
         dayRate: 70,
-        
+        img: 'imgs/van.png',
         id: 6
 
     },
+
+
+
+
+
+    
 
 ]
 
@@ -423,22 +432,22 @@ $("#date-input").flatpickr(
 
 let date = ""
 
-$('#date-input').blur(function () {
+$('#date-input').change(function () {
 
 
     date = $('#date-input').val();
 
 
 
-    if (date = "") {
+    if (date.length<15) {
 
         console.log('there is an error')
-        this.style.backgroundColor = "red";
+       // this.style.backgroundColor = "red";
 
     } else {
 
         console.log('correct')
-        this.style.backgroundColor = "green";
+      //  this.style.backgroundColor = "green";
         runningTotal.dates = date
 
         toggleContinueButton();
@@ -462,7 +471,7 @@ $('.dates-pg-btn').click(function () {
             vehicle.carFuleCost = (0.18*minDis);
             
     
-        } else if ( vehicle.fuleUsage === 'med') {
+        } else if ( vehicle.fuleUsage === 'mid') {
             
             vehicle.carFuleCost = (0.24*minDis);
             
@@ -486,6 +495,7 @@ $('.duration-bk-btn').click(function(){
     $('.journey-min-dist').remove()
     $('.user-journey').remove()
     plublishRunningInfo(`<div class = 'running user-journey'> <div> ${runningTotal.departure} </div> <div> --> </div> <div></div> </div>`);
+    
     
 
     elarrival = ""
@@ -518,6 +528,7 @@ function addPassengerClicks() {
 
         plublishRunningInfo(`<div class ='running passenger-count-total'> <div> Total passengers </div> <div> ${runningTotal.passengerCount} </div></div>`);
 
+        
 
         $('.passenger-count').hide()
         $('.running-info-update').hide()
@@ -607,8 +618,8 @@ function displayFilterdVehicles() {
             console.log(vehicle)
             totalNum += 1
 
-            html += (`<div class="vehicle-icon" data-id='${vehicle.id}'> <img src="${vehicle.img}" alt=""> <div> ${vehicle.name} </div> <div>  ${vehicle.dayRate} Per day</div>   </div>`)
-
+            html += (`<div class="vehicle-icon ${vehicle.type}-bg-img" data-id='${vehicle.id}'>  <div> ${vehicle.name} </div> <div>  ${vehicle.dayRate} Per day</div>   </div>`)
+          
 
 
         }
@@ -703,7 +714,7 @@ function populateOrderPage(selectedVehicle){
 
     
     addTotal()
-
+    $('.vehical-img').html(` <img  class="product-image" src="/dist/${selectedVehicle.img}" alt="">`)
     $('.vehical-name').html(selectedVehicle.name)
    // $('.vehical-img').html(selectedVehicle.img)// do when you have images 
     $('.this-car-year').html(selectedVehicle.year)

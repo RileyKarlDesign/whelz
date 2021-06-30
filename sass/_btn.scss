@@ -13,10 +13,17 @@
 }
 
 .btn-foot{
-    height: 3.5em;
+    height: 3.7em;
     border-top: 1px solid $whitecolor ;
     background-color:  $maincolor;
     display: flex;
+    align-items: center;
     
+    
+}
+
+.bk-btn{
+    display: flex;
+    align-items: center;
 }
 

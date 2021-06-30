@@ -1,9 +1,41 @@
 #user-name-input{
-    height: 5em;
+    height:3em;
+    background-color: $lightcolor;
+    border: 0;
+    outline: none;
+    font-size: 1.7em;
+    color: $whitecolor;
+    padding: 0.4em;
+    text-align: center;
+
+} 
+
+#user-name-input:focus{
+    border:1px solid $whitecolor ;
 }
+
+
+#date-input{
+
+    height: 3em;
+    background-color: $lightcolor;
+    border: 0;
+    outline: none;
+    font-size: 1.7em;
+    color: $whitecolor;
+    text-align: center;
+   
+}
+
+#date-input{
+    border:1px solid $whitecolor ;
+}
+
+
 
 
 .flatpickr-input{
     
     height: 5em;
 }
+ 

@@ -20,8 +20,8 @@
         flex-grow: 2;
         display: flex;
         flex-direction: column;
-        justify-content: flex-start ;
-        padding-bottom: 2em;
+        //justify-content: space-between ;
+        padding-bottom: 0em;
         //background-color: indigo;
         
         
@@ -39,17 +39,43 @@
             display: flex;
             justify-content: center;
         }
+
+        .order+.order{
+            margin-top: 0.3em;
+        }
+
+        .total{
+
+            margin-top: 4em;
+            background-color: $lightcolor;
+            border-top: 1px dotted $whitecolor;
+            border-bottom: 1px dotted $whitecolor;
+        }
     
+
+       .vehical-name {
+           background-color: $lightcolor;
+           margin-bottom:0 ;
+       }
 }
 
 
 .vehical-img{
 
 
-    height: 50%;
-    background-color: $lightcolor;
-    margin: 2em 0;
+    height: 100%;
+    //background-color: $lightcolor;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // border-top: solid 1px $whitecolor;
+    // border-bottom: solid 1px $whitecolor;
 
   //  border: solid $whitecolor 1px;
+
+  .product-image{
+      height: 3em;
+  }
 }
 

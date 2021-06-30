@@ -62,17 +62,17 @@
 }
 
 .container {
-  background-color: #243a24;
-  color: rgba(255, 255, 255, 0.795);
+  background-color: #1c301c;
+  color: rgba(255, 255, 255, 0.801);
   height: 100vh;
   width: 100vw;
-  padding: 1em;
+  padding: 1em 1em 0.2em 1em;
   overflow: hidden;
 }
 
 .direction {
-  border-top: 1px solid rgba(255, 255, 255, 0.795);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.795);
+  border-top: 1px solid rgba(255, 255, 255, 0.801);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.801);
   padding: 0.2em 0;
 }
 
@@ -110,11 +110,6 @@
   height: 5em;
 }
 
-.foot {
-  height: 3em;
-  flex-shrink: 1;
-}
-
 .continue-btn {
   height: 3em;
   width: 50%;
@@ -130,14 +125,24 @@
 }
 
 .btn-foot {
-  height: 3.5em;
-  border-top: 1px solid rgba(255, 255, 255, 0.795);
-  background-color: #243a24;
+  height: 3.7em;
+  border-top: 1px solid rgba(255, 255, 255, 0.801);
+  background-color: #1c301c;
   display: flex;
+  align-items: center;
+}
+
+.bk-btn {
+  display: flex;
+  align-items: center;
 }
 
 .running-info-update {
   height: 20%;
+}
+
+.running-info-update div {
+  margin: 0.07em 0;
 }
 
 .departure-location {
@@ -191,7 +196,32 @@
 }
 
 #user-name-input {
-  height: 5em;
+  height: 3em;
+  background-color: rgba(255, 255, 255, 0.096);
+  border: 0;
+  outline: none;
+  font-size: 1.7em;
+  color: rgba(255, 255, 255, 0.801);
+  padding: 0.4em;
+  text-align: center;
+}
+
+#user-name-input:focus {
+  border: 1px solid rgba(255, 255, 255, 0.801);
+}
+
+#date-input {
+  height: 3em;
+  background-color: rgba(255, 255, 255, 0.096);
+  border: 0;
+  outline: none;
+  font-size: 1.7em;
+  color: rgba(255, 255, 255, 0.801);
+  text-align: center;
+}
+
+#date-input {
+  border: 1px solid rgba(255, 255, 255, 0.801);
 }
 
 .flatpickr-input {
@@ -234,7 +264,7 @@
 .inner-container .vehicle-icon {
   width: 48.75%;
   border: 1px solid white;
-  padding-top: 48.5%;
+  padding-top: 48.75%;
   display: flex;
   font-size: 0.7em;
   justify-content: space-between;
@@ -242,12 +272,8 @@
   flex-wrap: wrap;
 }
 
-.inner-container .vehicle-icon img {
-  width: 100%;
-}
-
 .inner-container .vehicle-icon div {
-  border-top: solid 1px rgba(255, 255, 255, 0.795);
+  border-top: solid 1px rgba(255, 255, 255, 0.801);
   width: 50%;
   padding-left: 5px;
   padding-top: 7px;
@@ -256,7 +282,33 @@
 }
 
 .inner-container .vehicle-icon div + div {
-  border-left: solid 1px rgba(255, 255, 255, 0.795);
+  border-left: solid 1px rgba(255, 255, 255, 0.801);
+}
+
+.inner-container .vehicle-icon img {
+  width: 50%;
+}
+
+.Car-bg-img {
+  background-image: url("/dist/imgs/car.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 65%;
+}
+
+.Scooter-bg-img {
+  background-image: url("/dist/imgs/Scooter.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 40%;
+}
+
+.Van-bg-img {
+  background-image: url("/dist/imgs/van.png");
+  background-position-x: center;
+  background-position-y: center;
+  background-repeat: no-repeat;
+  background-size: 60%;
 }
 
 .order-page {
@@ -279,8 +331,7 @@
   flex-grow: 2;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  padding-bottom: 2em;
+  padding-bottom: 0em;
 }
 
 .order-page .direction {
@@ -293,9 +344,30 @@
   justify-content: center;
 }
 
+.order-page .order + .order {
+  margin-top: 0.3em;
+}
+
+.order-page .total {
+  margin-top: 4em;
+  background-color: rgba(255, 255, 255, 0.096);
+  border-top: 1px dotted rgba(255, 255, 255, 0.801);
+  border-bottom: 1px dotted rgba(255, 255, 255, 0.801);
+}
+
+.order-page .vehical-name {
+  background-color: rgba(255, 255, 255, 0.096);
+  margin-bottom: 0;
+}
+
 .vehical-img {
-  height: 50%;
-  background-color: #3d633d;
-  margin: 2em 0;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.vehical-img .product-image {
+  height: 3em;
 }
 /*# sourceMappingURL=style.css.map */

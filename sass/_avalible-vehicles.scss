@@ -28,16 +28,14 @@
     width: 48.75%;
     
     border: 1px solid white;
-    padding-top: 48.5%;
+    padding-top: 48.75%;
     display: flex;
     font-size: 0.7em;
     justify-content: space-between;
     margin-top: 2.5%;
     flex-wrap: wrap;
     
-    img{
-        width: 100%;
-    }
+  
 
     div{
         border-top: solid 1px $whitecolor;
@@ -52,5 +50,31 @@
     div+div{
         border-left: solid 1px $whitecolor;
     }
+
+    img{ width: 50%;}
 }
 }
+
+
+.Car-bg-img{
+    background-image: url('/dist/imgs/car.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 65%;
+}
+
+.Scooter-bg-img{
+    background-image: url('/dist/imgs/Scooter.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 40%;
+}
+
+.Van-bg-img{
+    background-image: url('/dist/imgs/van.png');
+    background-position-x: center;
+    background-position-y: center;
+    background-repeat: no-repeat;
+    background-size: 60%;
+}
+
